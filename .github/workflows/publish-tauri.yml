@@ -23,6 +23,7 @@ jobs:
 
       - name: install frontend dependencies
         run: npm install
+        working-directory: ./lol-record-analysis-tauri
 
       - uses: tauri-apps/tauri-action@v0
         env:
@@ -34,3 +35,4 @@ jobs:
           releaseDraft: true
           prerelease: false
           args: ''
+        working-directory: ./lol-record-analysis-tauri
