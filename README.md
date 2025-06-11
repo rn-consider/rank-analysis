@@ -86,12 +86,15 @@
 #### Tauri2 前端
 
 1. 切换到 Tauri 项目的根目录 `./lol-record-analysis-tauri`。
+
 2. 确保已安装 [Rust](https://www.rust-lang.org/) 环境 和 cpp 相关环境
+
 3. 运行一键编译脚本：
    
    ```bash
    `npm run tauri build`
    ```
+
 4. 打开 `./lol-record-analysis-tauri/src-tauri/target/release/bundle` 目录，即可看到生成的安装包。
 
 ### Golang 后端
@@ -101,6 +104,7 @@
    ```bash
    cd ./lol-record-client-golang
    ```
+
 2. 编译为二进制版本：
    
    ```bash
