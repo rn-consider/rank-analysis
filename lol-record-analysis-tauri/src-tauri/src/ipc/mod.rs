@@ -29,3 +29,27 @@ pub async fn get_summoner(source_type: &str, source_id: &str) -> Result<Summoner
         }
     }
 }
+
+#[tauri::command]
+pub async fn cleanup_processes() -> Result<String, String> {
+    #[cfg(target_os = "windows")]
+    {
+        use std::process::Command;
+
+        // 强制清理所有相关进程
+        let _ = Command::new("taskkill")
+            .args(&["/F", "/IM", "msedgewebview2.exe"])
+            .output();
+
+        let _ = Command::new("taskkill")
+            .args(&["/F", "/IM", "lol-record-analysis.exe"])
+            .output();
+
+        Ok("进程清理完成".to_string())
+    }
+
+    #[cfg(not(target_os = "windows"))]
+    {
+        Ok("非 Windows 系统，无需清理".to_string())
+    }
+}
