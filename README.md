@@ -45,20 +45,21 @@
 2. 自动接受匹配
 3. 自动 pick/ban 英雄
 
-
 ---
 
 # 使用方法
 
 1. 前往 [Release 页面](https://github.com/wnzzer/lol-rank-record-analysis/releases) 下载最新的构建版本压缩包。
-   > **版本选择建议**: Windows 10 1803 及以上版本推荐
-   如果较低的系统版本可能由于缺少 webview2 导致无法运行
    
+   > **版本选择建议**: Windows 10 1803 及以上版本推荐
+   > 如果较低的系统版本可能由于缺少 webview2 导致无法运行
+
 2. 解压后直接运行，无需管理员权限。
 
 3. 软件运行时会自动检测游戏客户端，无需考虑启动顺序，支持中途启动并保持稳定连接。
 
 > **注意**
+> 
 > - 当前仅支持腾讯服务器。
 > - 若游戏客户端正在运行，软件会自动连接并获取相关数据。
 
@@ -72,7 +73,6 @@
 
 ![自动化功能](./lol-record-analysis-app/public/three.png "分析功能演示")
 
-
 ---
 
 # 安装与开发
@@ -84,28 +84,31 @@
 ### 分别编译前端和后端
 
 #### Tauri2 前端
+
 1. 切换到 Tauri 项目的根目录 `./lol-record-analysis-tauri`。
 2. 确保已安装 [Rust](https://www.rust-lang.org/) 环境 和 cpp 相关环境
 3. 运行一键编译脚本：
-```bash
- `npm run tauri build`
-```
+   
+   ```bash
+   `npm run tauri build`
+   ```
 4. 打开 `./lol-record-analysis-tauri/src-tauri/target/release/bundle` 目录，即可看到生成的安装包。
-
 
 ### Golang 后端
 
 1. 切换到 Golang 主程序目录：
+   
    ```bash
    cd ./lol-record-client-golang
    ```
 2. 编译为二进制版本：
+   
    ```bash
    go build
    ```
 
-
 3. 将生成的 `lol-record-analysis.exe` 复制到以下路径：
+   
    ```
    ./lol-record-analysis-tauri/src-tauri/target
    ```
