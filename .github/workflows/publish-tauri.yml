@@ -25,6 +25,9 @@ jobs:
         run: npm install
         working-directory: ./lol-record-analysis-tauri
 
+      - name: change directory to lol-record-analysis-tauri
+        run: cd ./lol-record-analysis-tauri
+
       - name: publish tauri app
         uses: tauri-apps/tauri-action@v0
         env:
@@ -36,4 +39,3 @@ jobs:
           releaseDraft: true
           prerelease: false
           args: ''
-        working-directory: ./lol-record-analysis-tauri
