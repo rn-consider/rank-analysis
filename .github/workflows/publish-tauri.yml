@@ -25,7 +25,8 @@ jobs:
         run: npm install
         working-directory: ./lol-record-analysis-tauri
 
-      - uses: tauri-apps/tauri-action@v0
+      - name: publish tauri app
+        uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -34,4 +35,5 @@ jobs:
           releaseBody: 'See the assets to download this version and install.'
           releaseDraft: true
           prerelease: false
-          args: '--cwd ./lol-record-analysis-tauri'
+          args: ''
+        working-directory: ./lol-record-analysis-tauri
