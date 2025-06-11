@@ -39,3 +39,9 @@ jobs:
           releaseDraft: true
           prerelease: false
           args: ''
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: tauri-build-output
+          path: ./lol-record-analysis-tauri/src-tauri/target/release
