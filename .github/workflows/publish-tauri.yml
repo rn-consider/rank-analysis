@@ -34,5 +34,4 @@ jobs:
           releaseBody: 'See the assets to download this version and install.'
           releaseDraft: true
           prerelease: false
-          args: ''
-        working-directory: ./lol-record-analysis-tauri
+          args: '--cwd ./lol-record-analysis-tauri'
